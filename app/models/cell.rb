@@ -48,6 +48,6 @@ class Cell < ApplicationRecord
 
   def clear_adjacent(game, x, y)
 
-    #TODO: Implement later if time.
+    #TODO: Recursive function to clear adjacent mines and flag mine count near by
   end
 end
