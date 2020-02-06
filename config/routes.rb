@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :users do
+
+    resources :games, only: [:index, :show]
+  end
+
+  resources :games, only: [:create, :new, :edit, :update, :destroy] do
+
+    resources :cells, only: [:index]
+  end
+
+  resources :cells, only: [:update]
 end
