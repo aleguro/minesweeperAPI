@@ -7,7 +7,7 @@ class CreateCells < ActiveRecord::Migration[5.2]
       t.references :game, foreign_key: true
       t.integer :x
       t.integer :y
-      t.integer :mines, default: 0
+      t.integer :mined, default: 0
       t.integer :status
 
       t.timestamps

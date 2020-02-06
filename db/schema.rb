@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_125602) do
     t.integer "game_id"
     t.integer "x"
     t.integer "y"
-    t.integer "mines", default: 0
+    t.integer "mined", default: 0
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_125602) do
     t.integer "cols"
     t.integer "rows"
     t.integer "status"
-    t.integer "mines_count"
+    t.integer "mines"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

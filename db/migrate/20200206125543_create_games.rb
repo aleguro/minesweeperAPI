@@ -7,7 +7,7 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.integer :cols
       t.integer :rows
       t.integer :status
-      t.integer :mines_count
+      t.integer :mines
       t.references :user, foreign_key: true
 
       t.timestamps
