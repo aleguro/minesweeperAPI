@@ -39,6 +39,12 @@ class GamesController < ApplicationController
     end
   end
 
+  # TODO: Change the game to paused or playing
+  #
+  def update
+
+  end
+
   private
 
   def game_params
