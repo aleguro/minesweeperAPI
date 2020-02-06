@@ -17,10 +17,22 @@ class CellsController < ApplicationController
 
     cell = Cell.find(params[:id])
 
+    if cell.game.is_over?
+
+      render json: game, include: :cells, status: :no_content
+    end
+
     cell.send(params[:action])
 
     game = cell.game.reload!
 
     render json: game, include: :cells, status: :ok
+  end
+
+  private
+
+  def cells_params
+
+    params.permit(:action)
   end
 end

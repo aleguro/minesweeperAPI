@@ -19,11 +19,21 @@ class Game < ApplicationRecord
   scope :won,     -> { where(status: status[:won]) }
   scope :lost,    -> { where(status: status[:lost]) }
 
+  def is_over?
+
+    status == (Game::WON || Game::LOST)
+  end
+
+  def game_over(state)
+
+    upate_atrributes status: state
+  end
+
   protected
 
   def cell_count
 
-    self.rows * self.cols
+    rows * cols
   end
 
   private
@@ -35,15 +45,15 @@ class Game < ApplicationRecord
 
   def create_cells
 
-    mines = Array.new( self.mines, 1)
-    safes = Array.new( self.cell_count - self.mines, 0)
-    all   = (mines + safes).shuffle
+    mines_a = Array.new( mines, 1)
+    safes_a = Array.new( cell_count - mines, 0)
+    all_a   = (mines_a + safes_a).shuffle
 
     rows.times do |x|
 
       cols.times do |y|
 
-        self.cells.create( x: x, y: y, mined: all.pop, status: Cell::UNREVEALED)
+        self.cells.create( x: x, y: y, mined: all_a.pop, status: Cell::UNREVEALED)
       end
     end
   end
