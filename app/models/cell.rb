@@ -12,7 +12,7 @@ class Cell < ApplicationRecord
 
   def click
 
-    return if self.status == Cell::FLAGGED
+    return if status == Cell::FLAGGED
 
     if mined
 
@@ -21,10 +21,9 @@ class Cell < ApplicationRecord
     else
 
       update_attributes status: Cell::CLEARED
-      clear_adjacent self.game, self.x, self.y
+      clear_adjacent game, x, y
 
-      #check for winner ?
-
+      game.game_over(Game::WON) if game.is_won?
     end
   end
 
@@ -49,5 +48,6 @@ class Cell < ApplicationRecord
 
   def clear_adjacent(game, x, y)
 
+    #TODO: Implement later if time.
   end
 end

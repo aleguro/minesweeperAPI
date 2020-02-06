@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_125602) do
+ActiveRecord::Schema.define(version: 2020_02_06_171022) do
 
   create_table "cells", force: :cascade do |t|
     t.integer "game_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_125602) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "adjacents"
     t.index ["game_id"], name: "index_cells_on_game_id"
   end
 

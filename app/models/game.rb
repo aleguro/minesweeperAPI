@@ -24,6 +24,11 @@ class Game < ApplicationRecord
     status == (Game::WON || Game::LOST)
   end
 
+  def is_won?
+
+    cells.where(status: Cell::CLEARED).count == (cell_count - mines)
+  end
+
   def game_over(state)
 
     upate_atrributes status: state
