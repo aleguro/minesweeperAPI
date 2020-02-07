@@ -36,3 +36,28 @@ What we want to see is how well you handle yourself given the time you spend on 
 
 Please email your solution as soon as you have completed the challenge or the time is up.
 
+#### DEVELOPER NOTES
+	
+	-Scope to achieve a solution:
+		1. Create simple rails api based project using sqlite for dev and posgresql with heroku
+		2. Create models
+		3. Create controllers
+		4. Implement most of the game logic
+		5. Implement client library sketelon
+		6. Test and deploy
+
+	- Left outside of the scope
+		1. Model validations
+		2. Controller respond better to missing routes and invalid requests
+		3. API authentication
+		4. Add API swagger documentation
+		5. Better error handling
+		6. Queries optimization
+		7. Compelete game logic	
+
+	- Herou URL: 	https://minesweeper-api2.herokuapp.com
+	- Git URL: 	    https://github.com/aleguro/minesweeper-API
+	- Wakatime URL: https://wakatime.com/@dae5befc-43fd-4ce3-a415-5ebf8858400f/projects/yqllmglocc?start=2020-02-01&end=2020-02-07
+
+
+ 
