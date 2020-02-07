@@ -1,5 +1,7 @@
 class Cell < ApplicationRecord
 
+  #TODO: Install machine_state gem to manage status transitions
+
   UNREVEALED = 0
   FLAGGED    = 1
   CLEARED    = 2

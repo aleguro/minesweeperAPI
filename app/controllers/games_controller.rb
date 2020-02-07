@@ -10,10 +10,10 @@ class GamesController < ApplicationController
     render json: games, status: :ok
   end
 
-  # GET /users/1/games/1
+  # GET /games/1
   def show
 
-    game = Game.where(id: params[:id]).include(:cells).first
+    game = Game.where(id: params[:id]).includes(:cells).first
 
     if game.present?
 
@@ -49,6 +49,6 @@ class GamesController < ApplicationController
 
   def game_params
 
-    params.require(:games).permit(:user_id, :cols, :rows, :mines)
+    params.permit(:user_id, :cols, :rows, :mines)
   end
 end
